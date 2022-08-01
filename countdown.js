@@ -11,7 +11,7 @@ setInterval(() => {
   let distance = statedPointInTime - currentPointInTime;
 
   // Assign delivery day based on distance
-  let deliveryDay = "allerede i dag";
+  let deliveryDay = "i dag";
 
   // If the stated point in time has already passed add 1 to current date
   if (distance < 1) {
@@ -31,6 +31,6 @@ setInterval(() => {
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display converted values nicely in countdown element
-  const content = `Bestil inden ${hours} timer, ${minutes} minutter og ${seconds} sekunder og din ordre sendes ${deliveryDay}!`;
+  const content = `Bestil inden ${hours} timer, ${minutes} minutter og ${seconds} sekunder og din ordre pakkes og sendes allerede ${deliveryDay}!`;
   document.getElementById("countdown").innerText = content;
 }, 1000);
