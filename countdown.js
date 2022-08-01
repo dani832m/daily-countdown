@@ -10,6 +10,9 @@ setInterval(() => {
   // Difference between stated point in time and current point in time
   let distance = statedPointInTime - currentPointInTime;
 
+  // Assign delivery day based on distance
+  let deliveryDay = "allerede i dag";
+
   // If the stated point in time has already passed add 1 to current date
   if (distance < 1) {
     statedPointInTime = new Date(
@@ -17,6 +20,9 @@ setInterval(() => {
     );
     // Get the new difference
     distance = statedPointInTime - currentPointInTime;
+
+    // Reassign delivery day based on new distance
+    deliveryDay = "i morgen";
   }
 
   // Convert distance to hours, minutes and seconds
@@ -25,6 +31,6 @@ setInterval(() => {
   const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   // Display converted values nicely in countdown element
-  const content = `Bestil inden ${hours} timer, ${minutes} minutter og ${seconds} sekunder for at få din ordre med dagens sending!`;
+  const content = `Bestil inden ${hours} timer, ${minutes} minutter og ${seconds} sekunder og din ordre sendes ${deliveryDay}!`;
   document.getElementById("countdown").innerText = content;
 }, 1000);
