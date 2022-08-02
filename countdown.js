@@ -4,7 +4,7 @@ setInterval(() => {
 
   // Stated point in time
   let statedPointInTime = new Date(
-    `${currentPointInTime.getMonth() + 1} ${currentPointInTime.getDate()} ${currentPointInTime.getFullYear()} 16:00:00`
+    `${currentPointInTime.getMonth() + 1}/${currentPointInTime.getDate()}/${currentPointInTime.getFullYear()} 21:00:00`
   );
 
   // Difference between stated point in time and current point in time
@@ -16,7 +16,7 @@ setInterval(() => {
   // If the stated point in time has already passed add 1 to current date
   if (distance < 1) {
     statedPointInTime = new Date(
-      `${currentPointInTime.getMonth() + 1} ${currentPointInTime.getDate() + 1}, ${currentPointInTime.getFullYear()} 16:00:00`
+      `${currentPointInTime.getMonth() + 1}/${currentPointInTime.getDate()}/${currentPointInTime.getFullYear()} 21:00:00`
     );
     // Get the new difference
     distance = statedPointInTime - currentPointInTime;
